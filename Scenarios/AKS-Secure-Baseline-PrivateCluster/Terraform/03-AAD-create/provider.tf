@@ -10,12 +10,12 @@ terraform {
 
   }
 
-  backend "azurerm" {
-    # resource_group_name  = ""   # Partial configuration, provided during "terraform init"
-    # storage_account_name = ""   # Partial configuration, provided during "terraform init"
-    # container_name       = ""   # Partial configuration, provided during "terraform init"
-    key                  = "aad"
-  }
+backend "azurerm" {
+        resource_group_name  = "tfstate"
+        storage_account_name = "tfstatelandingzone"
+        container_name       = "tfstate"
+        key                  = "AAD/terraform.tfstate"
+    }
 
 }
 
